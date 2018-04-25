@@ -1,0 +1,5 @@
+<mvt:comment>global footer</mvt:comment>
+</main>
+<!-- end t-site-content -->
+
+<mvt:item name="readytheme" param="contentsection( 'global_footer-1' )" />

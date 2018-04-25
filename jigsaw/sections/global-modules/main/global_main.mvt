@@ -1,0 +1,67 @@
+<mvt:if expr="l.settings:page:code NE 'SFNT' AND l.settings:page:code NE 'BASK'">
+	<mvt:if expr="l.settings:page:code EQ 'ORDL' OR l.settings:page:code EQ 'OCST' OR l.settings:page:code EQ 'OUS1' OR l.settings:page:code EQ 'OUSM' OR l.settings:page:code EQ 'UATM' OR l.settings:page:code EQ 'UATR' OR l.settings:page:code EQ 'OSEL' OR l.settings:page:code EQ 'OPAY'">
+	<mvt:elseif expr="l.settings:page:code EQ 'ORDS' OR l.settings:page:code EQ 'INVC'">
+		<section class="o-layout u-bg-gray-50 u-color-white">
+			<div class="o-layout__item">
+				<br>
+				<br>
+				<div class="o-layout__item u-color-gray-20">Thank you for your order, &mvte:order:ship_fname;!</div>
+				<p class="o-layout__item c-heading-delta u-text-uppercase u-text-bold">Confirmation #&mvt:order:id;</p>
+				<p class="o-layout__item u-font-small">
+					<button class="c-button c-button--clear c-button--flush u-bg-transparent u-color-white u-text-uppercase" data-hook="print-invoice"><span class="u-icon-print u-color-gray-20"></span> Print Receipt</button>
+				</p>
+				<br>
+			</div>
+		</section>
+	<mvt:elseif expr="l.settings:page:code EQ 'ACLN'">
+		<section class="o-layout u-bg-gray-10">
+			<div class="o-layout__item">
+				<br>
+				<br>
+				<h1 class="c-heading-delta o-layout__item u-text-bold u-text-center u-text-uppercase">
+					&mvt:page:name;<br><br>
+					<a class="c-button c-button--hollow c-button--large c-heading--subheading u-bg-transparent u-color-gray-40 u-text-uppercase" href="&mvte:urls:SFNT:secure_sep;Action=LOGO" title="Log Me Out">Log Me Out</a>
+				</h1>
+				<br>
+			</div>
+		</section>
+		<br>
+	<mvt:elseif expr="g.Customer_Temporary_Password">
+	<mvt:elseif expr="'CTGY' CIN l.settings:page:code">
+	<mvt:elseif expr="l.settings:page:code EQ 'LOGN'">
+	<mvt:elseif expr="l.settings:page:code EQ 'PLST'">
+	<mvt:elseif expr="l.settings:page:code EQ 'SRCH'">
+	<mvt:elseif expr="l.settings:page:code EQ 'FPWD'">
+	<mvt:elseif expr="l.settings:page:code EQ 'CLTG'">
+	<mvt:elseif expr="l.settings:page:code EQ 'PROD'">
+	<mvt:elseif expr="l.settings:page:code EQ 'CSBE'">
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<h1 class="c-heading-delta u-text-bold u-text-uppercase">
+					Edit Subscription<br>
+					<span class="c-heading--subheading">&mvte:subscriptionfields:productsubscriptionterm:descrip;</span>
+				</h1>
+				<hr class="c-keyline">
+			</div>
+		</section>
+	<mvt:elseif expr="l.settings:page:code NE 'ABUS' AND l.settings:page:code NE 'CTUS' AND l.settings:page:code NE 'FAQS' AND l.settings:page:code NE 'PRPO' AND l.settings:page:code NE 'SARP'">
+		<section class="o-layout">
+			<div class="o-layout__item">
+				<h1 class="c-heading-delta u-text-bold u-text-uppercase">&mvt:page:name;</h1>
+				<hr class="c-keyline">
+			</div>
+		</section>
+	</mvt:if>
+</mvt:if>
+
+<mvt:if expr="g.Maintenance_Warning_Message">
+	<section class="o-layout">
+		<div class="o-layout__item">
+			<div class="x-messages x-messages--info">
+				<span class="u-icon-info"> </span>
+				&mvt:global:Maintenance_Warning_Message;
+			</div>
+		</div>
+	</section>
+	<!-- end g.Maintenance_Warning_Message -->
+</mvt:if>

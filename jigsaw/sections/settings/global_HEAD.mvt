@@ -1,0 +1,25 @@
+<head itemscope itemtype="http://schema.org/WebSite">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="&mvt:global:basehref;" />
+
+	<mvt:if expr="NOT ISNULL l.settings:page:title">
+		<title itemprop="name">&mvt:page:title;</title>
+	<mvt:else>
+		<title itemprop="name">&mvt:store:name;</title>
+	</mvt:if>
+	
+	<mvt:item name="readytheme" param="contentsection( 'readytheme_styles' )" />
+	<mvt:item name="head" param="css_list" />
+	
+	<mvt:if expr="'CTGY' CIN l.settings:page:code">
+		<link rel="canonical" href="&mvte:category:link;" itemprop="url">
+	<mvt:elseif expr="'PROD' CIN l.settings:page:code OR l.settings:page:code EQ 'PATR'">
+		<link rel="canonical" href="&mvt:product:link;" itemprop="url">
+	<mvt:else>
+		<link rel="canonical" href="&mvte:urls:_self:auto;" itemprop="url">
+	</mvt:if>
+	<mvt:item name="prodctgy_meta" param="combined" />
+
+</head>

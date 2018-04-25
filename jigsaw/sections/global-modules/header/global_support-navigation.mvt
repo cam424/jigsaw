@@ -1,0 +1,5 @@
+<div class="support-navigation">
+	<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+		<a class="nav-link support-nav-link" href="&mvte:navigationitem:url;" title="&mvte:navigationitem:name;">&mvte:navigationitem:name;</a>
+	</mvt:foreach>
+</div>
