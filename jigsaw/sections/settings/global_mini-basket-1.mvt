@@ -1,0 +1,73 @@
+<section class="off-canvas position-right mini-basket" id="openMiniBasket" data-hook="mini-basket" data-item-count="&mvt:global_minibasket:basket_count;" data-subtotal="&mvt:global_minibasket:formatted_total;" data-off-canvas data-transition>
+	<div class="off-canvas-topbar">
+		<strong>My Cart: &mvt:global_minibasket:basket_count; item(s)</strong>
+		<button class="button" id="closeOffCanvas" onclick="closeOffCanvas()">
+			<i class="fa fa-times"></i>
+		</button>
+	</div>
+	<mvt:if expr="NOT l.settings:global_minibasket:empty">
+		<ul class="mini-basket-list">
+			<mvt:foreach iterator="item" array="global_minibasket:groups">
+				<mvt:do file="g.Module_Library_DB" name="l.success" value="Product_Load_Code(l.settings:item:code, l.settings:item_p )" />
+				<mvt:do file="g.Module_Feature_URI_UT" name="l.settings:item:uri" value="Store_Product_URL(l.settings:item_p, NULL)" />
+				<li class="grid-x mini-basket-line">
+					<figure class="cell small-2 medium-4 mini-basket-image">
+						<img src="&mvte:item:imagetypes:main;" alt="&mvt:item:name;" title="&mvt:item:name;">
+					</figure>
+					<a class="cell small-10 medium-8 mini-basket-item" href="&mvt:item:uri;">
+						<div class="mini-basket-item-name">
+							<span>&mvt:item:name;</span>
+						</div>
+						<div class="mini-basket-item-details">
+							<mvt:foreach iterator="option" array="item:options">
+								<span>
+									<mvt:if expr="l.settings:option:option_id">
+										&mvt:option:attr_prompt;: &mvt:option:opt_prompt;
+									<mvt:elseif expr="NOT ISNULL l.settings:option:data">
+										&mvt:option:attr_prompt;: &mvt:option:data;
+									<mvt:elseif expr="NOT ISNULL l.settings:option:data_long">
+										&mvt:option:attr_prompt;: &mvt:option:data_long;
+									<mvt:else>
+										&mvt:option:attr_prompt;
+									</mvt:if>
+								</span>
+							</mvt:foreach>
+							<mvt:if expr="l.settings:item:subterm_id">
+								<span>Subscription: &mvte:item:productsubscriptionterm:descrip;</span>
+							</mvt:if>
+						</div>
+						<div class="mini-basket-item-total">
+							<span class="mini-basket-item-qty">Qty: &mvte:item:quantity;</span>
+							<hr class="c-keyline">
+							<span class="mini-basket-item-subtotal">&mvt:item:formatted_subtotal;</span>
+						</div>
+					</a>
+				</li>
+			</mvt:foreach>
+		</ul>
+		<div class="mini-basket-footer">
+			<hr class="c-keyline">
+			<div class="mini-basket-charges">
+				<mvt:foreach iterator="charge" array="global_minibasket:charges">
+					<div class="mini-basket-charge">
+						<span class="mini-basket-charge-title">&mvt:charge:descrip;</span>
+						<span>&mvt:charge:formatted_disp_amt;</span>
+					</div>
+				</mvt:foreach>
+			</div>
+			<div class="mini-basket-total">
+				<span class="mini-basket-total-text">Total</span>
+				<span>&mvt:global_minibasket:formatted_total;</span>
+			</div>
+			<div class="mini-basket-links">
+				<a class="button mini-basket-link edit-cart" href="&mvte:urls:BASK:auto;">Edit Cart</a>
+				<a class="button mini-basket-link checkout" href="&mvte:urls:OINF:secure;">Checkout</a>
+			</div>
+			<button class="button mini-basket-link continue" id="continueShopping" onclick="closeOffCanvas()">Continue Shopping</button>
+		</div>
+	<mvt:else>
+		<div class="mini-basket-footer empty-cart-warning">
+			<p>Your Shopping Cart Is Empty</p>
+		</div>
+	</mvt:if>
+</section>

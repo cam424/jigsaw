@@ -1,6 +1,3 @@
-var button = document.getElementById('closeOffCanvas'),
-	offCanvasMenu = document.getElementById('offCanvasLeftOverlap');
-
 $(document).foundation();
 
 $(document).ready(function() {
@@ -8,11 +5,17 @@ $(document).ready(function() {
 
 });
 
-
 function closeOffCanvas() {
-	var offCanvasOverlay = $('.js-off-canvas-overlay');
+	var offCanvasMenu,
+		offCanvasOverlay = $('.js-off-canvas-overlay');
 
-	offCanvasMenu.classList.remove('is-open');
-	offCanvasMenu.setAttribute('aria-hidden', 'true');
+	if ($('#offCanvasLeftOverlap').hasClass('is-open')) {
+		offCanvasMenu = $('#offCanvasLeftOverlap')
+	} else if ($('#openMiniBasket').hasClass('is-open')) {
+		offCanvasMenu = $('#openMiniBasket')
+	}
+
+	$(offCanvasMenu).removeClass('is-open');
+	$(offCanvasMenu).attr('aria-hidden', 'true');
 	$(offCanvasOverlay).removeClass('is-visible is-closable');
 }

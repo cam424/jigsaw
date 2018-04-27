@@ -1,0 +1,25 @@
+/*** Global ***/
+
+.relative {
+	position: relative;
+}
+
+/*** Header ***/
+
+.top-header-links .grid-x {
+	-ms-flex-pack: center;
+    justify-content: center;
+}
+
+.top-header-links .head-links .button {
+	margin-bottom: 0;
+}
+
+@media screen and (min-width: 641px) {
+
+	.top-header-links .grid-x {
+		-ms-flex-pack: end;
+		justify-content: flex-end;
+	}
+
+}

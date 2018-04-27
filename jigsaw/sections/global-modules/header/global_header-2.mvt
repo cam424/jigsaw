@@ -1,0 +1,84 @@
+<mvt:item name="global_minibasket" />
+
+<header class="header head-wrap relative" id="header" data-hook="site-header">
+
+	<section class="grid-x align-middle top-site-header &mvt:global:checkout_hidden;">
+		<div class="cell small-12 medium-shrink text-center medium-text-left top-header-message">
+			<mvt:item name="readytheme" param="banner( 'header_message' )" />
+		</div>
+		<div class="cell small-12 medium-auto text-center medium-text-right top-header-links">
+			<div class="grid-x grid-padding-x align-middle">
+				<div class="cell shrink">
+					<mvt:item name="readytheme" param="navigationset( 'support_navigation' )" />
+				</div>
+				<div class="cell shrink head-links &mvt:global:checkout_hidden;">
+					<a class="button" href="&mvte:urls:LOGN:secure;">
+						<i class="fa fa-user"></i> Sign In
+					</a>
+					<button type="button" class="button" data-toggle="openMiniBasket">
+						<i class="fa fa-shopping-cart"></i> Cart
+						<span data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="grid-container head-masthead">
+		<div class="grid-x align-middle align-justify">
+			
+			<mvt:if expr="l.settings:page:code EQ 'SFNT'">
+				<h1 class="cell small-12 medium-4 large-3 shrink head-logo">
+					<a href="&mvte:urls:SFNT:auto;" title="&mvt:global:store:name;" rel="nofollow">
+						<mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
+							<div class="head-logo_store-name">&mvt:readytheme:logo_name;</div>
+							<small class="head-logo_store-tagline">&mvt:readytheme:logo_tagline;</small>
+						<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'">
+							<img src="&mvte:readytheme:logo_image;" alt="&mvt:readytheme:logo_alt;" title="&mvt:readytheme:logo_alt;">
+						</mvt:if>
+					</a>
+				</h1>
+			<mvt:else>
+				<div class="cell small-12 medium-4 large-3 shrink head-logo">
+					<a href="&mvte:urls:SFNT:auto;" title="&mvt:global:store:name;" rel="nofollow">
+						<mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
+							<div class="head-logo_store-name">&mvt:readytheme:logo_name;</div>
+							<small class="head-logo_store-tagline">&mvt:readytheme:logo_tagline;</small>
+						<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'">
+							<img src="&mvte:readytheme:logo_image;" alt="&mvt:readytheme:logo_alt;" title="&mvt:readytheme:logo_alt;">
+						</mvt:if>
+					</a>
+				</div>
+			</mvt:if>
+
+			<div class="cell auto text-center menu-wrap">
+				<mvt:item name="readytheme" param="navigationset( 'primary_navigation-2' )" />
+			</div>
+			
+			<div class="cell small-12 large-3 show-for-large head-search &mvt:global:checkout_hidden;" itemscope itemtype="http://schema.org/WebSite">
+				<meta itemprop="url" content="//&mvt:global:domain:name;/"/>
+				<form class="head-search-form" method="post" action="&mvte:urls:SRCH:rr;" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+					<fieldset class="cell large-12">
+						<legend>Product Search</legend>
+						<ul>
+							<li class="grid-x align-middle align-right head-search_form">
+								<meta itemprop="target" content="&mvte:urls:SRCH:auto;?q={Search}"/>
+								<input class="cell auto" data-mm_searchfield="Yes" data-mm_searchfield_id="x-search-preview" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search" autocomplete="off" required itemprop="query-input">
+								<button class="button cell shrink" type="submit">
+									<i class="fa fa-search"></i>
+								</button>
+							</li>
+						</ul>
+					</fieldset>
+
+					<span class="x-search-preview" data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview"></span>
+				</form>
+			</div>
+		</div>
+
+	</section>
+</header>
+
+<mvt:if expr="(l.settings:page:code NE 'SFNT' AND l.settings:page:code NE 'ACLN' AND l.settings:page:code NE 'BASK' AND l.settings:page:code NE 'ORDL' AND l.settings:page:code NE 'OCST' AND l.settings:page:code NE 'OUS1' AND l.settings:page:code NE 'OUSM' AND l.settings:page:code NE 'UATM' AND l.settings:page:code NE 'UATR' AND l.settings:page:code NE 'OSEL' AND l.settings:page:code NE 'OPAY') AND (ISNULL g.Customer_Temporary_Password)">
+	<mvt:item name="breadcrumbs" />
+</mvt:if>

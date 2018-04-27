@@ -1,4 +1,3 @@
 <mvt:comment>global header</mvt:comment>
-<mvt:item name="readytheme" param="navigationset( 'global_offcanvas-navigation' )" />
 <mvt:item name="readytheme" param="contentsection( 'global_header-1' )" />
-<main class="o-wrapper t-main-content-element">
+<main>
