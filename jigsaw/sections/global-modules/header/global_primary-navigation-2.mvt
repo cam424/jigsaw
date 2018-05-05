@@ -1,33 +1,19 @@
+<div data-responsive-toggle="nav" data-hide-for="medium">
+	<div class="grid-x top-bar">
+		<button class="cell small-6 text-left" type="button" data-toggle="nav">Menu</button>
+		<button class="cell small-6 text-right" type="button" data-toggle="nav">
+			<i class="menu-icon"></i>
+		</button>
+	</div>
+</div>
+
 <nav class="&mvt:global:checkout_hidden;">
-	<div class="grid-x show-for-large primary-navigation" data-layout="&mvte:readytheme:layout;">
+	<div id="nav" class="grid-x primary-navigation" data-layout="&mvte:readytheme:layout;">
 		<div class="cell">
-			<ul class="grid-x grid-margin-x dropdown menu align-middle align-justify nav-list" data-dropdown-menu>
+			<ul class="grid-x grid-margin-x dropdown menu align-middle nav-list" data-dropdown-menu>
 				<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
-					<mvt:assign name="l.settings:has:children" value="''"/>
-					<mvt:assign name="l.settings:show:child" value="''"/>
-					<li class="cell shrink nav-list-item relative &mvt:has:children;">
-						<a class="nav-link" href="&mvte:navigationitem:url;" target="&mvt:navigationitem:link_targ;">&mvt:navigationitem:name;&mvt:show:child;</a>
-						<mvt:if expr="NOT ISNULL l.settings:navigationitem:items">
-							<ul class="menu sub-nav-list">
-								<mvt:assign name="l.settings:has:children" value="''"/>
-								<mvt:foreach iterator="navigationitem_level2" array="navigationitem:items">
-									<mvt:assign name="l.settings:has:children" value="''"/>
-									<mvt:assign name="l.settings:show:child" value="''"/>
-									<li class="nav-list-item sub-nav-list-item &mvt:has:children;">
-										<a class="nav-link sub-nav-link" href="&mvte:navigationitem_level2:url;" target="&mvt:navigationitem_level2:link_targ;">&mvt:navigationitem_level2:name;&mvt:show:child;</a>
-										<mvt:if expr="NOT ISNULL l.settings:navigationitem_level2:items">
-											<ul class="menu sub-nav-list">
-												<mvt:foreach iterator="navigationitem_level3" array="navigationitem_level2:items">
-													<li class="nav-list-item sub-nav-list-item">
-														<a class="nav-link sub-nav-link" href="&mvte:navigationitem_level3:url;" target="&mvt:navigationitem_level3:link_targ;">&mvt:navigationitem_level3:name;</a>
-													</li>
-												</mvt:foreach>
-											</ul>
-										</mvt:if>
-									</li>
-								</mvt:foreach>
-							</ul>
-						</mvt:if>
+					<li class="cell small-12 medium-shrink nav-list-item relative">
+						<a class="nav-link" href="&mvte:navigationitem:url;" target="&mvt:navigationitem:link_targ;">&mvt:navigationitem:name;</a>
 					</li>
 				</mvt:foreach>
 			</ul>

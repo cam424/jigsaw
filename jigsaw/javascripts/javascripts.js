@@ -13,6 +13,8 @@ function closeOffCanvas() {
 		offCanvasMenu = $('#offCanvasLeftOverlap')
 	} else if ($('#openMiniBasket').hasClass('is-open')) {
 		offCanvasMenu = $('#openMiniBasket')
+	} else if ($('#offCanvasSearch').hasClass('is-open')) {
+		offCanvasMenu = $('#offCanvasSearch')
 	}
 
 	$(offCanvasMenu).removeClass('is-open');

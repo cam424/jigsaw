@@ -1,0 +1,62 @@
+<mvt:if expr="(l.settings:readytheme:social_active EQ 1) AND (NOT ISNULL l.settings:readytheme:social_facebook) OR (NOT ISNULL l.settings:readytheme:social_twitter) OR (NOT ISNULL l.settings:readytheme:social_instagram) OR (NOT ISNULL l.settings:readytheme:social_youtube) OR (NOT ISNULL l.settings:readytheme:social_pinterest) OR (NOT ISNULL l.settings:readytheme:social_googleplus) OR (NOT ISNULL l.settings:readytheme:social_vimeo) OR (NOT ISNULL l.settings:readytheme:social_flickr)">
+	<div class="navigation-element &mvte:readytheme:code;">
+		<ul class="grid-x no-bullet navigation-set &mvte:readytheme:layout; social-list">
+			<mvt:if expr="l.settings:readytheme:social_facebook">
+				<li class="cell shrink social-list-item">
+					<a href="&mvt:readytheme:social_facebook;" target="_blank" class="button social-link">
+						<i class="fa fa-facebook"></i>
+					</a>
+				</li>
+			</mvt:if>
+			<mvt:if expr="l.settings:readytheme:social_twitter">
+				<li class="cell shrink social-list-item">
+					<a href="&mvt:readytheme:social_twitter;" target="_blank" class="button social-link">
+						<i class="fa fa-twitter"></i>
+					</a>
+				</li>
+			</mvt:if>
+			<mvt:if expr="l.settings:readytheme:social_instagram">
+				<li class="cell shrink social-list-item">
+					<a href="&mvt:readytheme:social_instagram;" target="_blank" class="button social-link">
+						<i class="fa fa-instagram"></i>
+					</a>
+				</li>
+			</mvt:if>
+			<mvt:if expr="l.settings:readytheme:social_youtube">
+				<li class="cell shrink social-list-item">
+					<a href="&mvt:readytheme:social_youtube;" target="_blank" class="button social-link">
+						<i class="fa fa-youtube"></i>
+					</a>
+				</li>
+			</mvt:if>
+			<mvt:if expr="l.settings:readytheme:social_pinterest">
+				<li class="cell shrink social-list-item">
+					<a href="&mvt:readytheme:social_pinterest;" target="_blank" class="button social-link">
+						<i class="fa fa-pinterest"></i>
+					</a>
+				</li>
+			</mvt:if>
+			<mvt:if expr="l.settings:readytheme:social_googleplus">
+				<li class="cell shrink social-list-item">
+					<a href="&mvt:readytheme:social_googleplus;" target="_blank" class="button social-link">
+						<i class="fa fa-google-plus"></i>
+					</a>
+				</li>
+			</mvt:if>
+			<mvt:if expr="l.settings:readytheme:social_vimeo">
+				<li class="cell shrink social-list-item">
+					<a href="&mvt:readytheme:social_vimeo;" target="_blank" class="button social-link">
+						<i class="fa fa-vimeo"></i>
+					</a>
+				</li>
+			</mvt:if>
+			<mvt:if expr="l.settings:readytheme:social_flickr">
+				<li class="cell shrink social-list-item">
+					<a href="&mvt:readytheme:social_flickr;" target="_blank" class="button social-link">
+						<i class="fa fa-flickr"></i>
+					</a>
+				</li>
+			</mvt:if>
+		</ul>
+	</div>
+</mvt:if>
