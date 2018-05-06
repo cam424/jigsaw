@@ -21,3 +21,4 @@ function closeOffCanvas() {
 	$(offCanvasMenu).attr('aria-hidden', 'true');
 	$(offCanvasOverlay).removeClass('is-visible is-closable');
 }
+

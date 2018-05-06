@@ -71,7 +71,7 @@
 
 			<div class="cell shrink small-6 medium-shrink header-right">
 				<div class="&mvt:global:checkout_hidden;">
-					<button type="button" class="button" data-hook="show-related" data-target="global-account" href="&mvte:urls:LOGN:secure;">
+					<button type="button" class="button" data-toggle="openMiniBasket">
 						<i class="fa fa-user"></i>
 					</button>
 					<button type="button" class="button" data-toggle="openMiniBasket">
@@ -85,41 +85,6 @@
 					</div>
 				</div>
 			</div>
-			
-			<mvt:if expr="g.Basket:cust_id EQ 0">
-				<div class="u-over-everything t-global-account" data-hook="global-account">
-					<form method="post" action="&mvte:urls:_self:secure;" autocomplete="off">
-						<fieldset>
-							<legend>Global Account Log In</legend>
-							<input type="hidden" name="Action" value="LOGN" />
-							<input type="hidden" name="Category_Code" value="&mvte:global:Category_Code;" />
-							<input type="hidden" name="Product_Code" value="&mvte:global:Product_Code;" />
-							<input type="hidden" name="Search" value="&mvte:global:Search;" />
-							<input type="hidden" name="Per_Page" value="&mvte:global:Per_Page;" />
-							<input type="hidden" name="Sort_By" value="&mvte:global:Sort_By;" />
-							<ul class="grid-x no-bullet">
-								<li class="cell small-12">
-									<label class="hide">Email Address</label>
-									<input type="email" name="Customer_LoginEmail" value="&mvte:global:Customer_LoginEmail;" autocomplete="email" placeholder="Email" required>
-								</li>
-								<li class="cell small-12">
-									<label class="hide">Password</label>
-									<input type="password" name="Customer_Password" autocomplete="current-password" placeholder="Password">
-								</li>
-								<li class="cell small-12">
-									<button type="submit" class="button">Sign In</button>
-								</li>
-								<li class="cell small-12">
-									<a class="button" href="&mvte:urls:LOGN:secure;">Register</a>
-								</li>
-								<li class="cell small-12 text-center">
-									<a class="button" href="&mvte:urls:FPWD:secure;">Forgot Password?</a>
-								</li>
-							</ul>
-						</fieldset>
-					</form>
-				</div>
-			</mvt:if>
 		</div>
 
 	</section>
