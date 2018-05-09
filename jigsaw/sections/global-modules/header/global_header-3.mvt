@@ -71,10 +71,16 @@
 
 			<div class="cell shrink small-6 medium-shrink header-right">
 				<div class="&mvt:global:checkout_hidden;">
-					<button type="button" class="button" data-toggle="openMiniBasket">
-						<i class="fa fa-user"></i>
-					</button>
-					<button type="button" class="button" data-toggle="openMiniBasket">
+					<mvt:if expr="g.Basket:cust_id EQ 0">
+						<button type="button" class="button" data-toggle="openMiniBasket" onclick="openMiniBasketLogin()">
+							<i class="fa fa-user"></i>
+						</button>
+					<mvt:else>
+						<a class="button" href="&mvte:urls:ACLN:secure;">
+							<i class="fa fa-user"></i>
+						</a>
+					</mvt:if>
+					<button type="button" class="button" data-toggle="openMiniBasket" onclick="openMiniBasketShopping()">
 						<i class="fa fa-shopping-bag"></i>
 						<span data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
 					</button>
