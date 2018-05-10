@@ -1,12 +1,21 @@
-/*** Global ***/
-
-.relative {
-	position: relative;
-}
-
 /*** Off Canvas Menu ***/
 
 .is-drilldown {
 	overflow: visible !important;
 	max-width: 30rem;
+}
+
+/*** Header ***/
+
+.head-masthead {
+    padding: 1rem 0;
+}
+
+.head-search ul {
+	margin: 0;
+}
+
+.head-search input,
+.head-search button {
+	margin-bottom: 0;
 }

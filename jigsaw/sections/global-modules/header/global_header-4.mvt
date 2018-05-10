@@ -3,84 +3,19 @@
 
 <header class="header head-wrap relative" id="header" data-hook="site-header">
 
-	<mvt:item name="readytheme" param="Load_Image('fasten_header_logo', l.settings:fasten_header_logo)" />
-	<section class="grid-x grid-padding-x align-middle align-justify x-fasten-header &mvt:global:checkout_hidden;" data-hook="fasten-header">
-		<div class="cell shrink head-logo head-logo-fixed">
-			<a href="&mvte:urls:SFNT:auto;" title="&mvt:global:store:name;" rel="nofollow">
-				<mvt:if expr="l.settings:readytheme:fasten_header_logo:active">
-					<img src="&mvt:readytheme:fasten_header_logo:image;" alt="&mvt:readytheme:fasten_header_logo:image_alt;" title="&mvt:readytheme:fasten_header_logo:image_alt;">
-				<mvt:else>
-					<mvt:if expr="l.settings:readytheme:logo_type EQ 'text'">
-						<div class="head-logo_store-name">&mvt:readytheme:logo_name;</div>
-							<small class="head-logo_store-tagline">&mvt:readytheme:logo_tagline;</small>
-					<mvt:elseif expr="l.settings:readytheme:logo_type EQ 'image'">
-						<img src="&mvte:readytheme:logo_image;" alt="&mvt:readytheme:logo_alt;" title="&mvt:readytheme:logo_alt;">
-					</mvt:if>
-				</mvt:if>
-			</a>
-		</div>
-		
-		<div class="cell shrink catalog">
-			<a href="&mvte:urls:CTLG:auto;">Shop Our Catalog <i class="fa fa-chevron-right"></i></a>
-		</div>
-		
-		<div class="cell auto head-search head-search-fixed">
-			<form class="head-search-form" method="post" action="&mvte:urls:SRCH:rr;">
-				<fieldset>
-					<legend>Product Search</legend>
-					<ul>
-						<li class="grid-x align-middle align-right head-search_form">
-							<input class="cell auto" data-mm_searchfield="Yes" data-mm_searchfield_id="x-search-preview" type="search" name="Search" value="&mvte:global:Search;" placeholder="Search" autocomplete="off" required itemprop="query-input">
-							<button class="cell shrink button" type="submit">
-								<i class="fa fa-search"></i>
-							</button>
-						</li>
-					</ul>
-				</fieldset>
-				<span class="x-search-preview" data-mm_searchfield_menu="Yes" data-mm_searchfield_id="x-search-preview--fasten"></span>
-			</form>
-		</div>
-
-		<div class="cell shrink show-for-large head-links head-links-fixed">
-			<mvt:if expr="g.Basket:cust_id EQ 0">
-				<a class="button" href="&mvte:urls:LOGN:secure;">
-					<i class="fa fa-user"></i> Sign In
-				</a>
-			<mvt:else>
-				<a class="button" href="&mvte:urls:ACLN:secure;">
-					<i class="fa fa-user"></i> My Account
-				</a>
-			</mvt:if>
-			<button type="button" class="button" data-toggle="openMiniBasket">
-				<i class="fa fa-shopping-cart"></i> Cart
-				<span data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
-			</button>
-		</div>
-	</section>
-
-	<section class="grid-x align-middle top-site-header &mvt:global:checkout_hidden;">
-		<div class="cell small-12 medium-auto text-center medium-text-left top-header-message">
-			<mvt:item name="readytheme" param="banner( 'header_message' )" />
-		</div>
-		<div class="cell show-for-medium medium-auto top-header-links">
-			<div class="grid-x grid-padding-x">
-				<div class="cell auto show-for-large">
-					<mvt:item name="readytheme" param="navigationset( 'support_navigation' )" />
-				</div>
-				<div class="cell large-shrink text-right large-text-center">
-					&mvt:global:store:phone;
-				</div>
+	<section class="grid-x grid-padding-x hide-for-small align-middle top-bar top-site-header &mvt:global:checkout_hidden;">
+		<div class="cell auto text-center large-text-right top-header-links">
+			<div class="support-contact">
+				<i class="fa fa-phone"></i>
+				<span>Need Help? Call Us</span>
+				&mvt:global:store:phone;
 			</div>
+			<mvt:item name="readytheme" param="navigationset( 'support_navigation' )" />
 		</div>
 	</section>
 
 	<section class="grid-container head-masthead">
 		<div class="grid-x align-middle align-justify">
-			<div class="cell shrink hide-for-large mobile-menu-button &mvt:global:checkout_hidden;">
-				<button type="button" class="button" data-toggle="offCanvasLeftOverlap">
-					<i class="fa fa-bars"></i>
-				</button>
-			</div>
 			
 			<mvt:if expr="l.settings:page:code EQ 'SFNT'">
 				<h1 class="cell shrink head-logo">
@@ -106,9 +41,9 @@
 				</div>
 			</mvt:if>
 
-			<div class="cell shrink hide-for-large &mvt:global:checkout_hidden;">
-				<button type="button" class="button" data-toggle="openMiniBasket">
-					<span data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
+			<div class="cell shrink hide-for-large mobile-menu-button &mvt:global:checkout_hidden;">
+				<button type="button" class="button" data-toggle="offCanvasLeftOverlap">
+					<i class="fa fa-bars"></i>
 				</button>
 			</div>
 			
@@ -132,14 +67,15 @@
 				</form>
 			</div>
 
-			<div class="cell shrink show-for-large head-links &mvt:global:checkout_hidden;">
-				<button type="button" class="button" data-hook="show-related" data-target="global-account" href="&mvte:urls:LOGN:secure;">
-					<i class="fa fa-user"></i> Sign In
-				</button>
-
-				<button type="button" class="button" data-toggle="openMiniBasket">
-					<i class="fa fa-shopping-cart"></i> Cart
-					<span data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
+			<div class="cell shrink &mvt:global:checkout_hidden;">
+				<button type="button" class="button open-minibasket" data-toggle="openMiniBasket">
+					<i class="fa fa-shopping-cart"></i>
+					<i class="fa fa-caret-left"></i>
+					<div class="open-minibasket-border">
+						<span class="open-minibasket-counter" data-hook="mini-basket-count">&mvte:global_minibasket:basket_count;</span>
+						<span class="open-minbasket-text">My Cart</span>
+						<i class="fa fa-caret-down"></i>
+					</div>
 				</button>
 			</div>
 			

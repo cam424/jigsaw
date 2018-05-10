@@ -1,9 +1,3 @@
-/*** Global ***/
-
-.relative {
-	position: relative;
-}
-
 /*** Off Canvas Menu ***/
 
 .is-drilldown {
@@ -27,7 +21,6 @@
 }
 
 .head-search-wrapper input,
-.head-search-wrapper button
- {
+.head-search-wrapper button {
 	margin-bottom: 0;
 }

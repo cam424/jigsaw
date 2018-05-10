@@ -1,0 +1,9 @@
+/*** Global ***/
+
+.relative {
+	position: relative;
+}
+
+.absolute {
+	position: absolute;
+}
