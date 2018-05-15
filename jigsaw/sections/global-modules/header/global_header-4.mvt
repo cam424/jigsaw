@@ -127,6 +127,9 @@
 
 <div class="grid-container">
 	<div class="grid-x grid-x menu &mvt:global:checkout_hidden;">
+		<div class="cell shrink text-center mega-menu">
+			<mvt:item name="readytheme" param="navigationset( 'primary_mega-menu-1' )" />
+		</div>
 		<div class="cell auto text-center menu-wrap">
 			<mvt:item name="readytheme" param="navigationset( 'primary_navigation-1' )" />
 		</div>

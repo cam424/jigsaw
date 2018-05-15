@@ -1,0 +1,68 @@
+<!--Shop All Trigger with Shop All Link fallback-->
+<mvt:if expr="ISNULL l.settings:navigationitem">
+	<div class="mega-nav-trigger">
+		<a href="/our-catalog.html">Shop All</a>
+	</div>
+<mvt:else>
+	<div id="mega-nav" class="relative &mvt:global:checkout_hidden;">
+		<div class="grid-x show-for-large primary-navigation" data-layout="&mvte:readytheme:layout;">
+			<div class="cell">
+
+				<ul class="grid-x grid-margin-x dropdown menu align-middle align-justify nav-list" data-dropdown-menu>
+
+					<!--First Level-->
+					<li class="cell shrink nav-list-item relative">
+						<a class="nav-link" href="/our-catalog.html">Shop All</a>
+
+						<ul class="menu">
+							<!--Second Level-->
+							<mvt:foreach iterator="navigationitem" array="readytheme:navigationitems">
+								<mvt:assign name="l.settings:has:children" value="''"/>
+								<mvt:assign name="l.settings:show:child" value="''"/>
+
+								<li class="cell shrink nav-list-item relative &mvt:has:children;">
+									<mvt:if expr="ISNULL l.settings:navigationitem:items">
+										<a class="nav-link" href="&mvte:navigationitem:url;" target="&mvt:navigationitem:link_targ;">&mvt:navigationitem:name;&mvt:show:child;</a>
+
+									<mvt:else>
+										<a class="nav-link relative" data-toggle="megaMenu" href="&mvte:navigationitem:url;" target="&mvt:navigationitem:link_targ;">&mvt:navigationitem:name;&mvt:show:child;</a>
+
+										<div id="megaMenu" class="mega-menu dropdown-pane" data-dropdown data-position="right" data-alignment="top" data-options="hover:true; hoverPane:true;">
+
+											<div class="grid-x grid-padding-x">
+												<!--Third and Fourth Levels-->
+												<mvt:assign name="l.settings:has:children" value="''"/>
+												<mvt:foreach iterator="navigationitem_level2" array="navigationitem:items">
+													<div class="cell small-12 medium-6 large-4 text-left">
+														<div class="sub-nav-list">
+															<mvt:assign name="l.settings:has:children" value="''"/>
+															<mvt:assign name="l.settings:show:child" value="''"/>
+															<div class="nav-list-item sub-nav-list-item &mvt:has:children;">
+																<a class="nav-link sub-nav-link" href="&mvte:navigationitem_level2:url;" target="&mvt:navigationitem_level2:link_targ;">&mvt:navigationitem_level2:name;&mvt:show:child;</a>
+
+																<mvt:if expr="NOT ISNULL l.settings:navigationitem_level2:items">
+																	<div class="sub-nav-list">
+																		<mvt:foreach iterator="navigationitem_level3" array="navigationitem_level2:items">
+																			<a class="nav-link sub-nav-link" href="&mvte:navigationitem_level3:url;" target="&mvt:navigationitem_level3:link_targ;">&mvt:navigationitem_level3:name;</a>
+																		</mvt:foreach>
+																	</div>
+																</mvt:if>
+															</div>
+														</div>
+													</div>
+												</mvt:foreach>
+											</div>
+
+										</div>
+									</mvt:if>
+
+								</li>
+							</mvt:foreach>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</mvt:if>

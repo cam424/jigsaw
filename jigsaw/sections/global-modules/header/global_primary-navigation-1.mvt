@@ -1,4 +1,4 @@
-<nav class="&mvt:global:checkout_hidden;">
+<nav id="main-nav" class="&mvt:global:checkout_hidden;">
 	<div class="grid-x show-for-large primary-navigation" data-layout="&mvte:readytheme:layout;">
 		<div class="cell">
 			<ul class="grid-x grid-margin-x dropdown menu align-middle align-justify nav-list" data-dropdown-menu>

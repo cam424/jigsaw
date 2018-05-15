@@ -78,11 +78,36 @@
 	display: none;
 }
 
+/** Mega Menu **/
+
+.nav-link[data-toggle='megaMenu']:after {
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    content: '';
+    border-bottom-width: 0;
+    border-top-style: solid;
+    border-color: #1779ba transparent transparent;
+    right: 5px;
+    left: auto;
+    margin-top: -3px;
+}
+
 @media screen and (min-width: 64em) {
 
+	/** Header **/
 	.open-mini-basket .open-minbasket-text,
 	.open-mini-basket .fa-caret-down {
 		display: inline;
+	}
+
+	/** Mega Menu **/
+	.mega-menu.dropdown-pane.is-open {
+		top: -0.1rem;
+		right: -0.1rem;
+		width: 100%;
+		padding-left: 25rem; /* Left Offset */
 	}
 
 }
